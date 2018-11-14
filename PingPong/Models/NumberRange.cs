@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+
 namespace PingPong
 {
   public class NumberRange
@@ -9,20 +12,37 @@ namespace PingPong
     //   return val;
     // }
 
-    public bool CheckDivisibility(int inputNumb)
+
+    public List<string> CreateNumberPingPongList(int inputNumb)
+    {
+      List<string> numberRange = new List<string> {};
+
+      for (int index = 0; index < inputNumb; index++)
+      {
+        string inputAsString = this.CheckDivisibility(index + 1);
+        numberRange.Add(inputAsString);
+      }
+      return numberRange;
+    } 
+
+    public string CheckDivisibility(int inputNumb)
     {
 
       if(inputNumb % 15 == 0)
       {
-        return true;
+        return "ping-pong";
       }
       else if (inputNumb % 5 == 0)
       {
-        return true;
+        return "pong";
+      }
+      else if (inputNumb % 3 == 0)
+      {
+        return "ping";
       }
       else
       {
-        return inputNumb % 3 == 0;
+        return inputNumb.ToString();
       }
     }
 

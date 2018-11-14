@@ -1,4 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 using PingPong;
 
 namespace PingPong.Tests
@@ -14,24 +15,39 @@ namespace PingPong.Tests
     // }
 
     [TestMethod]
-    public void CheckDivisibility_DivisibleByFifteen_True()
+    public void CheckDivisibility_DivisibleByFifteen_Pingpong()
     {
       NumberRange checkDivisibility = new NumberRange();
-      Assert.AreEqual(true, checkDivisibility.CheckDivisibility(15));
+      Assert.AreEqual("ping-pong", checkDivisibility.CheckDivisibility(15));
     }
 
     [TestMethod]
-    public void CheckDivisibility_DivisibleByFive_True()
+    public void CheckDivisibility_DivisibleByFive_Pong()
     {
       NumberRange checkDivisibility = new NumberRange();
-      Assert.AreEqual(true, checkDivisibility.CheckDivisibility(5));
+      Assert.AreEqual("pong", checkDivisibility.CheckDivisibility(5));
     }
 
     [TestMethod]
-    public void CheckDivisibility_DivisibleByThree_True()
+    public void CheckDivisibility_DivisibleByThree_Ping()
     {
       NumberRange checkDivisibility = new NumberRange();
-      Assert.AreEqual(true, checkDivisibility.CheckDivisibility(3));
+      Assert.AreEqual("ping", checkDivisibility.CheckDivisibility(3));
+    }
+
+    [TestMethod]
+    public void CheckDivisibility_NotDivisbleByPreviousCriteria_True()
+    {
+      NumberRange checkDivisibility = new NumberRange();
+      Assert.AreEqual("1", checkDivisibility.CheckDivisibility(1));
+    }
+
+    [TestMethod]
+    public void CreateNumberPingPongList_CreatesListOfNumbersAndPingPongs_ExpectedList()
+    {
+      NumberRange testNewList = new NumberRange();
+
+      CollectionAssert.AreEqual(new List<string> {"1", "2", "ping", "4", "pong"}, testNewList.CreateNumberPingPongList(5));
     }
   }
 }
