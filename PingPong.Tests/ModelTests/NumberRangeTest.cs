@@ -7,13 +7,6 @@ namespace PingPong.Tests
   [TestClass]
   public class PingPongTest
   {
-    // [TestMethod]
-    // public void IsInteger_InputIsAInteger_False()
-    // {
-    //   NumberRange checkDivisibility = new NumberRange();
-    //   Assert.AreEqual(false, checkDivisibility.IsInteger("1"));
-    // }
-
     [TestMethod]
     public void CheckDivisibility_DivisibleByFifteen_Pingpong()
     {

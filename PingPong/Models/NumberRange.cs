@@ -5,13 +5,6 @@ namespace PingPong
 {
   public class NumberRange
   {
-    // public bool IsInteger(string input)
-    // {
-    //   int outPut = 0;
-    //   bool val = int.TryParse(input, out outPut);
-    //   return val;
-    // }
-
 
     public List<string> CreateNumberPingPongList(int inputNumb)
     {
@@ -23,7 +16,7 @@ namespace PingPong
         numberRange.Add(inputAsString);
       }
       return numberRange;
-    } 
+    }
 
     public string CheckDivisibility(int inputNumb)
     {
